@@ -29,7 +29,7 @@ function Modal({ isOpen, onClose , handleClick}) {
     function start() {
       gapi.client.init({
         clientId:
-          process.env.REACT_APP_CLIENT_ID,
+          process.env.REACT_APP_CLIENT_ID || "644455505524-dvjaek3p2c6lt1jtd283aj2mcllj7o1s.apps.googleusercontent.com",
         scope: ""
       });
     }
@@ -57,7 +57,7 @@ function Modal({ isOpen, onClose , handleClick}) {
       <div ref={modalRef} className="bg-white p-6 rounded-lg w-96">
         <h2 className="text-lg text-center text-xl font-bold my-4">Log in</h2>
           <GoogleLogin
-            clientId={process.env.REACT_APP_CLIENT_ID}
+            clientId={process.env.REACT_APP_CLIENT_ID || "644455505524-dvjaek3p2c6lt1jtd283aj2mcllj7o1s.apps.googleusercontent.com"}
             render={(renderProps) => (
               <button
                 className="bg-blue-500 flex items-center justify-center gap-2 hover:bg-blue-600 text-white text-lg font-bold px-4 py-2 rounded-full w-full text-center"
